@@ -1,5 +1,5 @@
 // Importando as bibliotecas necessárias
-import express, { json, response } from "express";
+import express, { json } from "express";
 import cors from "cors";
 import chalk from "chalk";
 
@@ -60,6 +60,16 @@ app.post("/tweets",
     }
 )
 
+app.get("/tweets", 
+    (req, res) => {
+        console.log(info("Enviando os 10 últimos tweets...\n"));
+
+        const ultimosDezTweets = tweets.slice(0, 10);
+        res.send(ultimosDezTweets);
+    }
+)
+
+// Rodando o servidor
 app.listen(porta,
     () => {
         console.log(info(`Servidor funcionando na porta ${porta}...\n`));
