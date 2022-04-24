@@ -34,6 +34,30 @@ app.post("/sign-up",
 
         console.log(info(`Usuario ${novoUsuario.username} cadastrado com sucesso...\n`));
     }
+);
+
+app.post("/tweets",
+    (req, res) => {
+        const body = req.body;
+        console.log(debug("Informação recebida: "), body, "\n");
+
+        const usuario = usuarios.find(
+            (usuario) => {
+                return usuario.username === body.username;
+            }
+        );
+
+        const novoTweet = {
+            ...usuario,
+            tweet: body.tweet
+        }
+
+        tweets.unshift(novoTweet);
+        
+        res.send("OK");
+
+        console.log(info("Novo Tweet cadastrado com sucesso: "), novoTweet, "\n");
+    }
 )
 
 app.listen(porta,
