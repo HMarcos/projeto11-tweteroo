@@ -40,7 +40,7 @@ Ao todo o servidor responde a duas requisições:
       avatar: "link da imagem"
     }
   ```
-* **POST**`/tweets`, para submeter um tweet;
+* **POST** `/tweets`, para submeter um tweet;
   * Body da requisição:
   ```javascript
       {
@@ -48,7 +48,7 @@ Ao todo o servidor responde a duas requisições:
         tweet: "Tweet"
       }
   ```
-* **GET**`/tweets`, para recuperar os 10 últimos tweets.
+* **GET** `/tweets`, para recuperar os 10 últimos tweets.
   * Resposta um array de tweets com o seguinte formato:
   ```javascript
       [
