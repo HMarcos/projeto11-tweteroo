@@ -17,7 +17,7 @@ npm install
 Para ativar o servidor, no diretório da aplicação, execute:
 
 ```
-node index.js
+node ./src/index.js
 ```
 ou
 
